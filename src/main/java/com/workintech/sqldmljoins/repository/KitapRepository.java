@@ -13,8 +13,9 @@ public interface KitapRepository extends JpaRepository<Kitap, Long> {
     @Query(value = QUESTION_1, nativeQuery = true)
     List<Kitap> findBooks();
 
+    //--Tüm kitapların ortalama puanını bulunuz.
 
-    String QUESTION_10 = "SELECT AVG(puan) AS ortalama_puan FROM kitap";
+    String QUESTION_10 = "SELECT AVG(k.puan) FROM kitap k";
     @Query(value = QUESTION_10, nativeQuery = true)
     Double findAvgPointOfBooks();
 
